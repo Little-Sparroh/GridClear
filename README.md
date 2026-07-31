@@ -1,35 +1,52 @@
 # GridClear
 
-A BepInEx mod for MycoPunk that adds a **Clear Grid** button to the gear upgrade menu, letting you unequip every upgrade from the hex grid in one click.
+A BepInEx mod for Mycopunk that adds a **Clear Grid** button to the gear upgrade menu, letting you unequip every upgrade
+from the hex grid in one click.
 
 ## Features
 
-- **Clear Grid button** — Appears in the bottom-left of the screen when a gear details or Ouro gear window is open
-- **Boundary Incursion safe order** — Unequips Boundary Incursion upgrades last for better compatibility with grid expansion
+- **Clear Grid button** — Appears on the gear action bar when a gear details or Ouro gear window is open
+- **Confirmation dialog** — Asks before unequipping so you don't clear by accident
+- **Boundary Incursion safe order** — Unequips Boundary Incursion upgrades last for better compatibility with grid
+  expansion
+- **Configurable** — Toggle the button on/off via BepInEx config
 
 ## Getting Started
 
 ### Dependencies
 
-* MycoPunk (base game)
-* [BepInEx](https://github.com/BepInEx/BepInEx) - Version 5.4.2403 or compatible
+- Mycopunk (base game)
+- [BepInEx](https://github.com/BepInEx/BepInEx) — Version 5.4.2403 or compatible
+- [SparrohUILib](https://thunderstore.io/c/mycopunk/p/Sparroh/SparrohUILib/) — Required for the gear action bar and
+  dialogs
 
 ### Installing
 
-**Via Thunderstore (Recommended)**:
-1. Download and install via Thunderstore Mod Manager
-2. The mod will be automatically installed to the correct directory
+**Via Thunderstore (Recommended)**
 
-**Manual Installation**:
-1. Place `GridClear.dll` in your `<MycoPunk Directory>/BepInEx/plugins/` folder
+1. Download and install via a Thunderstore mod manager
+2. Dependencies (including SparrohUILib) are installed automatically
+
+**Manual Installation**
+
+1. Install SparrohUILib if it is not already present
+2. Place `GridClear.dll` in your `<Mycopunk Directory>/BepInEx/plugins/` folder
 
 ### Usage
 
 1. Open a gear's upgrade/details window
-2. Click the **Clear Grid** button in the bottom-left corner
-3. All equipped upgrades are unequipped from the hex grid
+2. Click the **Clear Grid** button on the gear action bar
+3. Confirm in the dialog
+4. All equipped upgrades are unequipped from the hex grid
 
-No configuration is required.
+### Configuration
+
+Edit `BepInEx/config/sparroh.gridclear.cfg` (created on first launch), or change settings in-game if you use a config
+menu. Changes on disk are picked up automatically.
+
+| Section | Key               | Default | Description                                       |
+|---------|-------------------|---------|---------------------------------------------------|
+| General | Enable Clear Grid | `true`  | Show the Clear Grid button on the gear action bar |
 
 ## Building
 
@@ -43,4 +60,4 @@ dotnet build --configuration Release
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details
+This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
